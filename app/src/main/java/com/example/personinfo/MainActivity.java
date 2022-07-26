@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         create = (Button) findViewById(R.id.Create);
         create.setOnClickListener(this::nCreate);
         logIN.setOnClickListener(this::LogIN);
-
+        emailED.setText(email);
+        passwordED.setText(password);
         if(email.equals("") || password.equals("")){
             Toast.makeText(this,"Account doesn't exist, try to create new",Toast.LENGTH_LONG).show();
         }
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 password = data.getStringExtra("PASS");
                 number = data.getStringExtra("NUM");
                 name = data.getStringExtra("NAME");
+                emailED.setText(email);
+                passwordED.setText(password);
                 break;
         }
     }
